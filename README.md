@@ -1,6 +1,6 @@
 🌤️ Weather-App
 
-Project Overview
+Project Overview : 
 Weather-App is a modern, responsive React.js web application that provides current and hourly weather information for any city worldwide. It leverages the Open-Meteo Weather API for real-time weather data and the Open-Meteo Geocoding API to fetch city suggestions dynamically as users type in the search bar.
 The application features a clean glassmorphism interface with a gradient background. Users can search for a city, view detailed current weather data, and scroll through the next 12 hours of forecast.
 
