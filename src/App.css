@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+header {
+  font-size: 3.0rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px rgba(195, 141, 141, 0.3);
+}
+
+/* Search Bar Container */
+.search-bar-container {
+  width: 100%;
+  max-width: 672px;
+  
+  margin: 0 425px 30px auto;
+  position: relative;
+  z-index: 20; /* ensure dropdown is above other elements */
+}
+
+/* Input wrapper to position button inside */
+.search-input-wrapper {
+  position: relative;
+}
+
+/* Main input field */
+.search-input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 18px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: white;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.search-input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.search-input:focus {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.2);
+}
+
+/* Search button inside input */
+.search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 24px;
+  border-radius: 9999px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.search-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Suggestions dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.95);
+  color: black;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+}
+
+/* Each suggestion item */
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.suggestion-item:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+/* Current Weather Card */
+.current-weather-card {
+  width: 100%;
+  max-width: 672px;
+  margin: 0 auto 24px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.current-weather-card .city-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.current-weather-card .time {
+  margin-top: 4px;
+  font-size: 1.10rem;
+}
+
+.temp-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.temp {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.feels-like {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.weather-condition {
+  font-size: 1.8rem;
+  margin: 12px 0;
+}
+
+.wind, .humidity {
+  font-size: 1.10rem;
+  margin-top: 4px;
+}
+
+/* Hourly Container */
+.hourly-container {
+  width: 100%;
+  max-width: 672px;
+  margin: 24px auto 0 auto;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* Heading */
+.hourly-heading {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 26px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Scroll row */
+.hourly-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+/* Each hour card */
+.hour-card {
+  min-width: 100px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.hour-card p {
+  margin: 6px 0;
+  font-size: 0.85rem;
+}
+
+/* Spinner Container */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* match your cards' approximate height */
+  width: 100%;
+}
+
+/* Spinner Style */
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* makes it non-clickable */
+  opacity: 0.8;
+}
+
+
