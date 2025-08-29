@@ -4,7 +4,7 @@ function SearchBar({ onCitySelect }) {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
-  // ✅ Fetch city suggestions
+  //  Fetch city suggestions
   const fetchSuggestions = async (val) => {
     setQuery(val);
     if (val.length < 2) {
@@ -61,7 +61,7 @@ function SearchBar({ onCitySelect }) {
               onClick={() => {
                 const cityName = `${s.name}, ${s.country}`;
                 onCitySelect(s.name, s.latitude, s.longitude, s.country);
-                setQuery(cityName); // ✅ stays inside input
+                setQuery(cityName); //  stays inside input
                 setSuggestions([]);
               }}
             >
