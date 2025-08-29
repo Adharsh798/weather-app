@@ -20,7 +20,7 @@ function HourCard({ data }) {
     <div className="hour-card" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
       <p className="hour">{time}</p>
       <p className="icon-hour">{icon}</p>
-      <p className="label-hour">{label}</p> {/* ✅ Added weather description */}
+      <p className="label-hour">{label}</p>
       <p className="temp-hour">{Math.round(data.temp)}°C</p>
       <p className="humidity-hour">💧 {Math.round(data.humidity)}%</p>
     </div>
